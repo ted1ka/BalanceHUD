@@ -1,0 +1,25 @@
+hud:
+  enabled: true
+  # 20 = веднъж в секунда (20 ticks = 1 сек)
+  update-interval-ticks: 20
+  # {balance} се заменя с текущия баланс
+  format: "&aБаланс: &f${balance}"
+
+notify:
+  enabled: true
+  sound: true
+  # {amount} се заменя с получената сума
+  format: "&a+${amount} &7получени"
+
+rtp:
+  world: world
+  min-radius: 500
+  max-radius: 5000
+  cooldown-seconds: 60
+  warmup-seconds: 3
+
+rtpq:
+  world: world
+  min-radius: 500
+  max-radius: 5000
+  cooldown-seconds: 300

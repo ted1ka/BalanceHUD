@@ -1,0 +1,14 @@
+name: BalanceHUD
+version: '${project.version}'
+main: me.balancehud.BalanceHudPlugin
+api-version: '1.21'
+depend: [Vault]
+author: Tedi
+
+commands:
+  rtp:
+    description: Random teleport (с warmup)
+    usage: /rtp
+  rtpq:
+    description: Random teleport моментално (по-дълъг cooldown)
+    usage: /rtpq
