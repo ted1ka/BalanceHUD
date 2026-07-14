@@ -39,20 +39,29 @@ public class TabListManager implements Listener {
         int online = Bukkit.getOnlinePlayers().size();
         int max = Bukkit.getMaxPlayers();
 
+        String line = ChatColor.DARK_GREEN + "" + ChatColor.STRIKETHROUGH + repeat(" ", 64);
+
         String header =
-                ChatColor.GREEN + "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n" +
-                ChatColor.WHITE + "      " + ChatColor.DARK_GREEN + "N" + ChatColor.GREEN + "yvora " + ChatColor.WHITE + "SMP\n" +
-                ChatColor.GREEN + "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬";
+                line + "\n" +
+                ChatColor.GREEN + "✦ " + ChatColor.BOLD + "" + ChatColor.WHITE + "NYVORA " +
+                ChatColor.GRAY + "| " + ChatColor.BOLD + "" + ChatColor.GREEN + "SMP" + ChatColor.RESET + " " + ChatColor.GREEN + "✦\n" +
+                line;
 
         String footer =
-                ChatColor.GREEN + "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n" +
-                ChatColor.WHITE + "Онлайн: " + ChatColor.GREEN + online + ChatColor.GRAY + "/" + ChatColor.GREEN + max + "\n" +
-                ChatColor.GREEN + "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄";
+                line + "\n" +
+                ChatColor.GRAY + "Онлайн: " + ChatColor.GREEN + online + ChatColor.DARK_GRAY + "/" + ChatColor.GREEN + max + "\n" +
+                line;
 
         player.setPlayerListHeaderFooter(header, footer);
     }
 
     private void applyName(Player player) {
         player.setPlayerListName(ChatColor.GREEN + "● " + ChatColor.WHITE + player.getName());
+    }
+
+    private static String repeat(String s, int times) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < times; i++) sb.append(s);
+        return sb.toString();
     }
 }
